@@ -5,10 +5,6 @@ class DB{
     protected $dsn="mysql:host=localhost;charset=utf8;dbname=db12";
     protected $pdo;
     protected $table;
-    public $type=[1=>"健康新知",
-                  2=>"菸害防制",
-                  3=>"癌症防治",
-                  4=>"慢性病防治"];
 
     function __construct($table){
         $this->table=$table;
@@ -139,22 +135,5 @@ function q($sql){
 }
 
 
-$Total=new DB('total');
-$Mem=new DB('member');
-$Post=new DB('post');
-$Que=new DB('que');
-$Log=new DB('log');
 
 
-
-if(!isset($_SESSION['total'])){
-    $today=$Total->find(['date'=>date("Y-m-d")]);
-    if(empty($today)){
-        $Total->save(['date'=>date("Y-m-d"),'total'=>1]);
-    }else{
-        $today['total']=$today['total']+1;
-        $Total->save($today);
-
-    }
-    $_SESSION['total']=1;
-}

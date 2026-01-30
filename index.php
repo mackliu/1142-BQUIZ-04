@@ -28,18 +28,32 @@
                 情人節特惠活動 &nbsp;    年終特賣會開跑了     
         </marquee>
         <div id="left" class="ct">
-        	<div style="min-height:400px;">
-        	            </div>
-                        <span>
-            	<div>進站總人數</div>
+             <div style="min-height:400px;">
+                <!--分類選單-->
+        </div>
+        <span>
+                <div>進站總人數</div>
                 <div style="color:#f00; font-size:28px;">
-                	00005                </div>
-            </span>
-                    </div>
+                        00005               
+                </div>
+        </span>
+        </div>
         <div id="right">
-        	        </div>
+                <!--主內容區-->
+        <?php
+        $do=$_GET['do']??'main';
+        $file="front/".$do.".php";
+        if(file_exists($file)){
+            include $file;
+        }else{
+            include "front/main.php";
+        }
+
+        ?>
+        </div>
         <div id="bottom" style="line-height:70px;background:url(icon/bot.png); color:#FFF;" class="ct">
-        	頁尾版權 :        </div>
+        	頁尾版權 :        
+        </div>
     </div>
 
 </body></html>
