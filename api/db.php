@@ -2,7 +2,7 @@
 session_start();
 
 class DB{
-    protected $dsn="mysql:host=localhost;charset=utf8;dbname=db12";
+    protected $dsn="mysql:host=localhost;charset=utf8;dbname=db13";
     protected $pdo;
     protected $table;
 
@@ -129,11 +129,11 @@ function to($url){
 }
 
 function q($sql){
-    $dsn="mysql:host=localhost;charset=utf8;dbname=db12";
+    $dsn="mysql:host=localhost;charset=utf8;dbname=db13";
     $pdo=new PDO($dsn,'root','');
     return $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 }
 
 
-
+$Bot=new DB('bot');
 
