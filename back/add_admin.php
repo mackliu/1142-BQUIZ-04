@@ -5,13 +5,13 @@
     <tr>
         <td class="tt ct">帳號</td>
         <td class="pp">
-            <input type="acc">
+            <input type="acc" name='acc'>
         </td>
     </tr>
     <tr>
         <td class="tt ct">密碼</td>
         <td class="pp">
-            <input type="password">
+            <input type="password" name='pw'>
         </td>
     </tr>
     <tr>
