@@ -64,8 +64,9 @@ function regs(){
               address:$("#address").val(),
               email:$("#email").val()
     }
+
     $.get("api/chk_acc.php",{acc:data.acc},(res)=>{
-      if(parseInt(res) || acc=='admin'){
+      if(parseInt(res) || data.acc=='admin'){
         alert("此帳號已存在,請重設其他帳號")
         $("#acc").val("");
       }else{
