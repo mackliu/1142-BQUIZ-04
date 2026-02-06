@@ -4,7 +4,7 @@
     <tr>
         <td class="tt ct">所屬大分類</td>
         <td class="pp">
-            <select name="big" id="bit"></select>
+            <select name="big" id="big"></select>
         </td>
     </tr>
     <tr>
@@ -50,3 +50,32 @@
 </div>
 
 </form>
+
+<script>
+getTypes('big')
+
+$("#big").on('change',function(){
+    getTypes('mid');
+})
+
+function getTypes(type){
+
+ switch(type){
+    case "big":
+        $.get("api/get_bigs.php",(bigs)=>{
+            $("#big").html(bigs);
+            getTypes('mid');
+        })
+    break;
+    case "mid":
+        let big_id=$("#big").val();
+        $.get("api/get_mids.php",{big_id},(mids)=>{
+            $("#mid").html(mids);
+        })
+
+    break;
+ }
+
+
+}
+</script>
