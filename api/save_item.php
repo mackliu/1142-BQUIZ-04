@@ -6,7 +6,9 @@ if(!empty($_FILES['img']['tmp_name'])){
     move_uploaded_file($_FILES['img']['tmp_name'],"../upload/".$_POST['img']);
 }
 
-$_POST['no']=rand(100000,999999);
+if(!isset($_POST['id'])){
+    $_POST['no']=rand(100000,999999);
+}
 
 
 $Item->save($_POST);
