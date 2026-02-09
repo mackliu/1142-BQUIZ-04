@@ -54,10 +54,6 @@
                 endforeach;
                 ?>
                 
-
-
-
-
         </div>
         <span>
                 <div>進站總人數</div>
