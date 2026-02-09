@@ -103,9 +103,21 @@ input[type=text],input[type=password]
 {
 	display:none;
 }
+div.ww{
+	position: relative;
+}
 div.ww:hover > div.s
 {
 	display:block;
+	width:100%;
+	position:absolute;
+	top:40px;
+	left:120px;
+	z-index:100;
+}
+#left div.s a
+{
+	background-color: lightgreen;
 }
 .sb button
 {

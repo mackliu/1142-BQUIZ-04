@@ -31,6 +31,33 @@
         <div id="left" class="ct">
              <div style="min-height:400px;">
                 <!--分類選單-->
+                <a href="?type=0">全部商品(<?=$Item->count(['sh'=>1]);?>)</a>
+                <?php 
+                $bigs=$Type->all(['big_id'=>0]);
+                foreach($bigs as $big):
+                ?>
+                <div class="ww">
+                    <a href="?type=<?=$big['id'];?>"><?=$big['name'];?>(<?=$Item->count(['sh'=>1,'big'=>$big['id']]);?>)</a>
+                
+                <?php 
+                   if($Type->count(['big_id'=>$big['id']])>0){
+                        $mids=$Type->all(['big_id'=>$big['id']]);
+                        echo "<div class='s'>";
+                        foreach($mids as $mid):
+                        ?>
+                            <a href="?type=<?=$mid['id'];?>"><?=$mid['name'];?>(<?=$Item->count(['sh'=>1,'mid'=>$mid['id']]);?>)</a>
+                            <?php 
+                        endforeach;
+                        echo "</div>";
+                   }
+                echo "</div>";
+                endforeach;
+                ?>
+                
+
+
+
+
         </div>
         <span>
                 <div>進站總人數</div>
