@@ -21,7 +21,14 @@ if(isset($_GET['type']) && $_GET['type']!=0){
 }
 
 ?>
-
+<style>
+.pd{
+    padding:5px;
+}
+.bl{
+    border:1px solid white;
+}
+</style>
 <h2><?=$nav_str;?></h2>
 <?php 
 foreach($rows as $row):
@@ -33,8 +40,8 @@ foreach($rows as $row):
         </a>
     </div>
     <div style="width:60%">
-        <div class="ct tt" style='padding:5px 2px;border:1px solid white'><?=$row['name'];?></div>
-        <div class="pp" style='padding:5px 2px;border:1px solid white'>
+        <div class="ct tt pd bl" ><?=$row['name'];?></div>
+        <div class="pp pd bl" >
             價錢:<?=$row['price'];?>
             <a href="?do=buycart&id=<?=$row['id'];?>&qt=1" style="float:right">
                 <img src="icon/0402.jpg" alt="">
