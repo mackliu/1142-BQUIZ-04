@@ -1,7 +1,5 @@
 <?php
 $order=$Order->find($_GET['id']);
-
-
 ?>
 <h2 class="ct">訂單編號<span style='color:red'><?=$order['no'];?></span>的詳細資料</h2>
 
