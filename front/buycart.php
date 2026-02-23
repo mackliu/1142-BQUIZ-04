@@ -44,8 +44,6 @@ if(empty($_SESSION['buycart'])){
     </td>
    </tr> 
 
-
-
 <?php
   endforeach;
 ?>
