@@ -21,7 +21,11 @@
                 <a href="?do=news">最新消息</a> |
                 <a href="?do=look">購物流程</a> |
                 <a href="?do=buycart">購物車</a> |
+                <?php if(isset($_SESSION['mem'])):?>
+                <a href="api/logout.php">登出</a> |
+                <?php else:?>
                 <a href="?do=login">會員登入</a> |
+                <?php endif;?>
                 <a href="?do=admin">管理登入</a>
             </div>
         </div>
