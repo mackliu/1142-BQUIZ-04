@@ -11,12 +11,7 @@
     <tr>
         <td class="tt ct">驗證碼</td>
         <td class="pp">
-            <?php
-            $a=rand(10,99);
-            $b=rand(10,99);
-            $_SESSION['ans']=$a+$b;
-            echo $a . " + " . $b . " = ";
-            ?>
+            <img src="api/captcha.php" onclick="this.src='api/captcha.php?'+Math.random()" style="cursor:pointer" title="點擊重新產生">
             <input type="text" name="chknumber" id="chknumber">
         </td>
     </tr>
