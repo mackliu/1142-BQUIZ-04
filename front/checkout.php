@@ -3,38 +3,26 @@
 <?php
 $user=$Mem->find(['acc'=>$_SESSION['mem']]);
 ?>
-<table class="all">
-    <tr>
-        <td class="tt ct">登入帳號</td>
-        <td class="pp"><?=$user['acc'];?></td>
-    </tr>
-    <tr>
-        <td class="tt ct">姓名</td>
-        <td class="pp"><input type="text" name="name" value="<?=$user['name'];?>"></td>
-    </tr>
-    <tr>
-        <td class="tt ct">電子信箱</td>
-        <td class="pp"><input type="text" name="email" value="<?=$user['email'];?>"></td>
-    </tr>
-    <tr>
-        <td class="tt ct">聯絡地址</td>
-        <td class="pp"><input type="text" name="address" value="<?=$user['address'];?>"></td>
-    </tr>
-    <tr>
-        <td class="tt ct">聯絡電話</td>
-        <td class="pp"><input type="text" name="tel" value="<?=$user['tel'];?>"></td>
-    </tr>
+<div class="all">
+    <div>
+        登入帳號:<?=$user['acc'];?>
+    </div>
+    <div>
+        姓名:<input type="text" name="name" value="<?=$user['name'];?>">
+    </div>
+    <div>
+        電子信箱:<input type="text" name="email" value="<?=$user['email'];?>">
+    </div>
+    <div>
+        聯絡地址:<input type="text" name="address" value="<?=$user['address'];?>">
+    </div>
+    <div>
+       聯絡電話:<input type="text" name="tel" value="<?=$user['tel'];?>">
+    </div>
 
-</table>
+</div>
 
-<table class="all">
-   <tr class="tt ct">
-    <td>商品名稱</td>
-    <td>編號</td>
-    <td>數量</td>
-    <td>單價</td>
-    <td>小計</td>
-   </tr> 
+<div class="all">
 
 <?php
     $sum=0;
@@ -42,13 +30,13 @@ $user=$Mem->find(['acc'=>$_SESSION['mem']]);
         $item=$Item->find($id);
 ?>
 
-   <tr class="pp ct">
-    <td><?=$item['name'];?></td>
-    <td><?=$item['no'];?></td>
-    <td><input type="number" value="<?=$qt;?>" style='width:35px'></td>
-    <td><?=$item['price'];?></td>
-    <td><?=$item['price'] * $qt;?></td>
-   </tr> 
+   <div>
+    <div>商品名稱:<?=$item['name'];?></div>
+    <div>編號:<?=$item['no'];?></div>
+    <div>數量:<input type="number" value="<?=$qt;?>" style='width:35px'></div>
+    <div>單價:<?=$item['price'];?></div>
+    <div>小計:<?=$item['price'] * $qt;?></div>
+    </div> 
 
 <?php
 
@@ -56,7 +44,7 @@ $user=$Mem->find(['acc'=>$_SESSION['mem']]);
   endforeach;
 ?>
 
-  </table>
+</div>
   <div class="all tt ct">總價:<?=$sum;?></div>
   <input type="hidden" name="sum" value="<?=$sum;?>">
   <div class="ct">

@@ -33,22 +33,22 @@ if(isset($_GET['type']) && $_GET['type']!=0){
 <?php 
 foreach($rows as $row):
 ?>
-<div class='pp' style="display:flex;width:70%;margin:2px auto">
-    <div class='pp ct' style="width:40%;padding:10px;border:1px solid white">
+<div class='pp'>
+    <div class='pp ct'>
         <a href="?do=detail&id=<?=$row['id'];?>">
-            <img src="upload/<?=$row['img'];?>" style="width:150px;height:120px;">
+            <img src="upload/<?=$row['img'];?>" style="width:150px;">
         </a>
     </div>
-    <div style="width:60%">
-        <div class="ct tt pd bl" ><?=$row['name'];?></div>
-        <div class="pp pd bl" >
+    <div>
+        <div><?=$row['name'];?></div>
+        <div>
             價錢:<?=$row['price'];?>
-            <a href="?do=buycart&id=<?=$row['id'];?>&qt=1" style="float:right">
+            <a href="?do=buycart&id=<?=$row['id'];?>&qt=1">
                 <img src="icon/0402.jpg" alt="">
             </a>
     </div>
-        <div class="pp" style='padding:5px 2px;border:1px solid white'>規格:<?=$row['spec'];?></div>
-        <div class="pp" style='padding:5px 2px;' >簡介:<?=mb_substr($row['intro'],0,20);?>...</div>
+        <div >規格:<?=$row['spec'];?></div>
+        <div >簡介:<?=mb_substr($row['intro'],0,20);?>...</div>
     </div>
 </div>
 
